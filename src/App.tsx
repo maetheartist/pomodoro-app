@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import Timer from './components/Timer';
-import Controls from './components/Controls';
+
 import SessionSelector from './components/SessionSelector';
 import './index.css'
 
 export type SessionType = 'work' | 'short-break' | 'long-break';
 
 const App = () => {
-  const [durations, setDurations] = useState({
+  const [durations] = useState({
     work: 25,
     shortBreak: 5,
     longBreak: 15,
@@ -65,17 +65,6 @@ const App = () => {
         onResume={handleResume}
         onComplete={handleComplete} 
       />
-
-      {/* <Controls
-        durations={durations}
-        setDurations={setDurations}
-        isRunning={isRunning}
-        onStart={handleStart}
-        onPause={handlePause}
-        onResume={handleResume}
-      /> */}
-
-      {/* <p className="mt-4">Completed Work Sessions: {completedSessions}</p> */}
 
       <SessionSelector currentSession={currentSession} setCurrentSession={setCurrentSession} />
     
